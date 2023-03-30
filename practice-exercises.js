@@ -209,7 +209,7 @@ function maxSubarraySum(arr, num){
     }
 
     let currentTotal = total;
-    
+
     for (let i = num; i < arr.length; i++) {
        currentTotal += arr[i] - arr[i-num];
        total = Math.max(total, currentTotal);
@@ -265,4 +265,19 @@ function findLongestSubstring(str) {
       seen[char] = i + 1;
     }
     return longest;
+  }
+
+  // 7. BubbleSort function
+
+  function bubbleSort (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; i++) {
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr [j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
   }
