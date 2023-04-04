@@ -297,9 +297,37 @@ function selectionSort(arr){
                 lowest = j;
             }
         }
-        let temp = arr[i];
-        arr[i] = arr[lowest];
-        arr[lowest] = temp;
+        if(i !== lowest){
+            let temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
+        }
     }
     return arr;
+}
+
+// 9. InsertionSort function
+
+function insertionSort(arr){
+    for(let i = 1; i < arr.length; i++){
+        let currentVal = arr[i];
+        for(let j = i - 1; j >= 0 && arr[j] > currentVal; j--){
+            arr[j+1] = arr[j];
+        }
+        arr[j+1] = currentVal;
+    }
+    return arr;
+}
+
+// 10. MergeSort function
+
+function mergeSort(arr1, arr2){
+    let results = [];
+    let i = 0;
+    let j = 0;
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i])
+    }
+
+    return results;
 }
