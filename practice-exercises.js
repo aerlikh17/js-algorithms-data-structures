@@ -319,9 +319,9 @@ function insertionSort(arr){
     return arr;
 }
 
-// 10. MergeSort function
+// 10. Merge function
 
-function mergeSort(arr1, arr2){
+function merge(arr1, arr2){
     let results = [];
     let i = 0;
     let j = 0;
@@ -344,4 +344,14 @@ function mergeSort(arr1, arr2){
         } 
 
     return results;
+}
+
+// 11. MergeSort function
+
+function mergeSort(arr){
+    if(arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length/2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
 }
