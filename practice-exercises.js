@@ -361,9 +361,26 @@ function mergeSort(arr){
 function countDown(num){
     if(num <= 0){
         console.log("All done!");
-        return;
+        return; // base case
     }
     console.log(num);
     num--;
-    countDown(num);
+    countDown(num); // different input
+}
+
+// 13. sumRange (recursive function)
+
+function sumRange(num){
+    if(num === 1) return 1; // base case
+    return num + sumRange(num-1); 
+}
+
+// 14. Factorial 
+
+function factorial(num){
+    let total = 1;
+    for(let i = num; i > 0; i--){
+        total *= i;
+    }
+    return total;
 }
