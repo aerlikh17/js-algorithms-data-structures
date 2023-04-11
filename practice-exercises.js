@@ -458,3 +458,13 @@ function quickSort(arr, left = 0, right = arr.length -1 ){
     }
     return arr;
 }
+
+// 20. RadixSort function
+
+function radixSort(){
+
+}
+
+function getDigit(num, i){
+    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+}
