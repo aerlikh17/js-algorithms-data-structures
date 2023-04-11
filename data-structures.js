@@ -6,16 +6,12 @@ class Student {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-}
-
-// Instance methods
-
-class Student {
-    constructor(firstName, lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    // Instance methods
     fullName(){
         return `Your full name is ${this.firstName} ${this.lastName}`;
+    }
+    // Class method
+    static enrollStudents(...students){
+        
     }
 }
