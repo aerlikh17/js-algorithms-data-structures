@@ -94,6 +94,14 @@ class SinglyLinkedList{
         }
         return current;
     }
+    set(idx, val){ // set is changing the vlue of a node based on its position in the Linked List
+        let foundNote = this.get(idx);
+        if(foundNote){
+            foundNote.val = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 var list = new SinglyLinkedList()
