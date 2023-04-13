@@ -102,6 +102,19 @@ class SinglyLinkedList{
         }
         return false;
     }
+    insert(idx, val){ // insert is adding a node to the Linked List at a specific position
+        if(idx < 0 || idx > this.length) return false;
+        if(idx === this.length) return !!this.push(val);
+        if(idx === 0) return !!this.unshift(val);
+        
+        let newNode = new Node(val);
+        let prev = thos.get(idx - 1);
+        let temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 var list = new SinglyLinkedList()
