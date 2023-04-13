@@ -84,6 +84,16 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    get(idx){ // get is retrieving a node by its position in the Linked List
+        if(idx <0 || idx >= this.length) return null;
+        let counter = 0;
+        let current = this.head;
+        while(counter !== idx){
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
 }
 
 var list = new SinglyLinkedList()
