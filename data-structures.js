@@ -45,6 +45,23 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    pop(){
+        if(!this.head) return undefined;
+        let current = this.head;
+        let newTail = current;
+        while(current.next){
+            newTail = current;
+            current = current.next;
+        }
+        this.tale = newTail;
+        this.tail.next = null;
+        this.lenght--;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
+    }
 }
 
 var list = new SinglyLinkedList()
