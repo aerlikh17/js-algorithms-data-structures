@@ -33,7 +33,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
-    push(val){
+    push(val){ // pushing is adding a new node to the end of the Linked List
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
@@ -45,7 +45,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
-    pop(){
+    pop(){ // popping is removing a node from the end of the Linked List
         if(!this.head) return undefined;
         let current = this.head;
         let newTail = current;
@@ -61,6 +61,13 @@ class SinglyLinkedList{
             this.tail = null;
         }
         return current;
+    }
+    shift(){ // shifting is removing a new node from the beginning of the Linked List
+        if(!this.head) return undefined;
+        let currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        return currentHead;
     }
 }
 
