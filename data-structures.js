@@ -106,7 +106,7 @@ class SinglyLinkedList{
         if(idx < 0 || idx > this.length) return false;
         if(idx === this.length) return !!this.push(val);
         if(idx === 0) return !!this.unshift(val);
-        
+
         let newNode = new Node(val);
         let prev = thos.get(idx - 1);
         let temp = prev.next;
@@ -114,6 +114,17 @@ class SinglyLinkedList{
         newNode.next = temp;
         this.length++;
         return true;
+    }
+    remove(idx){ // remove is removing a node from the Linked List at a specific position
+        if(idx < 0 || idx >= this.length) return undefined;
+        if(idx === 0) return this.shift();
+        if(idx === this.length - 1) return this.pop();
+
+        let previousNode = this.get(index - 1);
+        let removed = previousNode.next;
+        previousNode.next = removed.next;
+        this.length--;
+        return removed;
     }
 }
 
