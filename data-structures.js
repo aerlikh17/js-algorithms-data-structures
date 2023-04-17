@@ -126,12 +126,45 @@ class SinglyLinkedList{
         this.length--;
         return removed;
     }
+    reverse(){ // reverse is reversing the Linked List in place
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let next;
+        let prev = null;
+
+        for(let i = 0; i < this.length; i++){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 var list = new SinglyLinkedList()
 list.push("Hello")
 list.push("Goodbye")
 list.push("!")
+
+// Doubly Linked List
+
+class Node{
+    constructor(val){
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+}
 
 
 
