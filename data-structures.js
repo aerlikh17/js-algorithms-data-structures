@@ -164,6 +164,19 @@ class DoublyLinkedList {
         this.tail = null;
         this.length = 0;
     }
+    push(val){
+        let newNode = new Node(val);
+        if(this.length === 0){
+            this.tail = newNode;
+            this.head = newNode;
+        } else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this; 
+    }
 }
 
 
