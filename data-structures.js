@@ -218,6 +218,25 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    get(idx){
+        if(idx < 0 || idx >= this.length) return null;
+        let counter, current;
+        if(idx <= this.length / 2){
+            counter = 0;
+            current = this.head;
+            while(counter !== idx){
+                current = current.next;
+                counter++;
+        }
+        } else {
+            counter = this.length - 1;
+            current = this.tail;
+            while(counter !== idx){
+                current = current.prev;
+                counter--;
+        }
+        return current;
+    }
 }
 
 
