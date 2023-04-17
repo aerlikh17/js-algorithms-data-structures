@@ -227,15 +227,32 @@ class DoublyLinkedList {
             while(counter !== idx){
                 current = current.next;
                 counter++;
-        }
+           }
         } else {
             counter = this.length - 1;
             current = this.tail;
             while(counter !== idx){
                 current = current.prev;
                 counter--;
+            }
         }
         return current;
+    }
+    set(idx, val){
+        let foundNode = this.get(idx);
+        if(foundNode != null){
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
+    insert(idx, val){
+        if(idx < 0 || idx > this.length) return false;
+        if(idx === 0) return this.unshift(val); 
+        if(idx === this.length) return this.push(val);
+        {
+
+        }
     }
 }
 
